@@ -1,0 +1,17 @@
+__pycache__/
+**/__pycache__
+orig.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*/.idea/workspace.xml
+.idea/workspace.xml
+.env
+/.env
+*.env
+/*.env
+/dump.rdb
+dump.rdb
