@@ -11,4 +11,4 @@ urlpatterns = [
     path('members/', MemberView.as_view()),
     path('chatrooms/', ChatroomView.as_view()),
     path('messages/', MessageView.as_view()),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

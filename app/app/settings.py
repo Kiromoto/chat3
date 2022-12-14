@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'chatback',
     'django.contrib.sites',
     'rest_framework',
+    'chatback',
 
 ]
 
