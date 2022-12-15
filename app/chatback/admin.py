@@ -3,21 +3,21 @@ from .models import Member, Chatroom, Message
 
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('user',)
-    list_filter = ('user',)
+    list_display = ('user', 'online',)
+    list_filter = ('user', 'online',)
     search_fields = ('user',)
 
 
 class ChatroomAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    list_filter = ('name',)
-    search_fields = ('name',)
+    list_display = ('name', 'dtcreate', 'owner', )
+    list_filter = ('name', 'dtcreate', 'owner',)
+    search_fields = ('name', 'owner', )
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('text',)
-    list_filter = ('text',)
-    search_fields = ('text',)
+    list_display = ('text', 'dtcreate', 'author', 'room', )
+    list_filter = ('text', 'dtcreate', 'author', 'room',)
+    search_fields = ('text', 'author', 'room',)
 
 
 admin.site.register(Member, MemberAdmin)
