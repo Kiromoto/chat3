@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User')
     avatar = models.ImageField(default='ava/avadefault.png', upload_to='ava/', verbose_name='Avatar', blank=True)
-    online = models.BooleanField(default=False, verbose_name='Status')
+    online = models.BooleanField(default=False, verbose_name='Online/offline')
 
     def __str__(self):
         return self.user.username
