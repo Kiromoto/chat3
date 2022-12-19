@@ -33,6 +33,14 @@ class MemberView(APIView):
             "success": f"Member '{member_saved.user_id}' updated successfully"
         })
 
+    def delete(self, request, pk):
+        member = get_object_or_404(Member.objects.all(), pk=pk)
+        member_name = member.user.username
+        member.delete()
+        return Response({
+            "message": f"Member {member_name} has been deleted."
+        }, status=204)
+
 
 class ChatroomView(APIView):
     def get(self, request):
@@ -57,6 +65,15 @@ class ChatroomView(APIView):
             "success": f"Chatroom '{chatroom_saved.name}' updated successfully"
         })
 
+    def delete(self, request, pk):
+        chatroom = get_object_or_404(Chatroom.objects.all(), pk=pk)
+        chatroom_name = chatroom.name
+        chatroom.delete()
+        return Response({
+            "message": f"Chatroom {chatroom_name} has been deleted."
+        }, status=204)
+
+
 
 class MessageView(APIView):
     def get(self, request):
@@ -80,3 +97,10 @@ class MessageView(APIView):
         return Response({
             "success": f"Message '{message_saved.text}' updated successfully"
         })
+
+    def delete(self, request, pk):
+        message = get_object_or_404(Message.objects.all(), pk=pk)
+        message.delete()
+        return Response({
+            "message": f"Message with id: {pk} has been deleted."
+        }, status=204)

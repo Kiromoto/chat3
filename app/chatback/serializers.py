@@ -2,21 +2,39 @@ from .models import Member, Chatroom, Message
 from rest_framework import serializers
 
 
-class MemberSerializer(serializers.Serializer):
-    user_id = serializers.IntegerField()
-    avatar = serializers.ImageField()
-    online = serializers.BooleanField()
+class MemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Member
+        fields = ['user', 'online', ]
 
-    def create(self, validated_data):
-        return Member.objects.create(**validated_data)
 
-    def update(self, instance, validated_data):
-        instance.user_id = validated_data.get('user_id', instance.user_id)
-        instance.avatar = validated_data.get('avatar', instance.avatar)
-        instance.online = validated_data.get('online', instance.online)
+class ChatroomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chatroom
+        fields = ['name', 'dtcreate', 'owner', 'guests', ]
 
-        instance.save()
-        return instance
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ['text', 'dtcreate', 'author', 'room', ]
+
+#
+# class MemberSerializer(serializers.Serializer):
+#     user_id = serializers.IntegerField()
+#     avatar = serializers.ImageField()
+#     online = serializers.BooleanField()
+#
+#     def create(self, validated_data):
+#         return Member.objects.create(**validated_data)
+#
+#     def update(self, instance, validated_data):
+#         instance.user_id = validated_data.get('user_id', instance.user_id)
+#         instance.avatar = validated_data.get('avatar', instance.avatar)
+#         instance.online = validated_data.get('online', instance.online)
+#
+#         instance.save()
+#         return instance
 
 
 # class ChatroomSerializer(serializers.Serializer):
@@ -35,12 +53,6 @@ class MemberSerializer(serializers.Serializer):
 #         instance.save()
 #         return instance
 
-class ChatroomSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Chatroom
-        fields = ['name', 'dtcreate', 'owner', 'guests']
-
-
 # class MessageSerializer(serializers.Serializer):
 #     text = serializers.CharField()
 #     dtcreate = serializers.DateTimeField()
@@ -57,8 +69,3 @@ class ChatroomSerializer(serializers.ModelSerializer):
 #         instance.room_id = validated_data.get('room_id', instance.room_id)
 #         instance.save()
 #         return instance
-
-class MessageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Message
-        fields = ['text', 'dtcreate', 'author', 'room']
