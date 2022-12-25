@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/istyle.css' %}">
+    <!--    <link rel="stylesheet" href="css/istyle.css">-->
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+<header class="header-block">
+    <nav>
+        <ul class="menu">
+            <li><a href="/chat/members/">Пользователи</a></li>
+            <li><a href="/chat/chatrooms/">Чаты</a></li>
+            <li><a href="/chat/messages/">Сообщения</a></li>
+            <li><a href="/chat/profile/">Профиль</a></li>
+            <li><a href="/accounts/logout/">Выйти</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="page-container">
+    {% block content %}
+    {% endblock %}
+    <!--    <p>Эта надпись с родительской HTML</p>-->
+
+</div>
+
+<footer class="footer-block">
+    <div class="footer-container">
+        <p class="copyright">Copyright &copy; My chat 2022</p>
+    </div>
+</footer>
+</body>
+</html>

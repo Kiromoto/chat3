@@ -1,0 +1,101 @@
+{% extends 'flatpages/index.html' %}
+
+{% block title %}
+Первая страница
+{% endblock title %}
+
+{% block content %}
+<section class="discussions">
+    <div class="discussion chatnames">
+        <p class="name">Список чатов</p>
+    </div>
+    <div class="discussion">
+        <div class="photo"
+             style="background-image: url(http://127.0.0.1:8000/uploads/ava/004.jpg);">
+            <div class="online"></div>
+        </div>
+        <div class="desc-contact">
+            <p class="name">Чат 1</p>
+            <p class="message">Чат обо всем на свете</p>
+        </div>
+        <div class="timer">120 min</div>
+    </div>
+    <div class="discussion message-active">
+        <div class="photo"
+             style="background-image: url(http://127.0.0.1:8000/uploads/ava/001.jpg);">
+            <div class="online"></div>
+        </div>
+        <div class="desc-contact">
+            <p class="name">Чат 2</p>
+            <p class="message">Чат об авто</p>
+        </div>
+        <div class="timer">300 min</div>
+    </div>
+</section>
+
+<section class="chat">
+    <div class="header-chat">
+        <i class="icon fa fa-user-o" aria-hidden="true"></i>
+        <p class="name">Название текущего чата</p>
+        <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+    </div>
+
+    <div class="messages-chat">
+        <div class="message">
+            <p class="name">Андрей</p>
+            <!--            <div class="photo"-->
+            <!--                 style="background-image: url(http://127.0.0.1:8000/uploads/ava/004.jpg);">-->
+            <!--                <div class="online"></div>-->
+            <!--            </div>-->
+            <p class="text">Чат обо всем!</p>
+        </div>
+        <div class="message text-only">
+            <p class="text"> What are you doing tonight ? Want to go take a drink ?</p>
+        </div>
+        <p class="time"> 14h58</p>
+        <div class="message text-only">
+            <div class="response">
+                <p class="text"> Hey Megan ! It's been a while 😃</p>
+            </div>
+            <p class="name">Anna</p>
+        </div>
+        <div class="message text-only">
+            <div class="response">
+                <p class="text"> Hey Megan ! It's been a while 😃</p>
+            </div>
+            <p class="name">Anna</p>
+        </div>
+        <div class="message text-only">
+            <div class="response">
+                <p class="text"> Hey Megan ! It's been a while 😃</p>
+            </div>
+            <p class="name">Anna</p>
+        </div>
+    </div>
+
+    <div class="footer-chat">
+        <input type="text" class="write-message" placeholder="Type your message here"></input>
+        <button class="send-button" type="button">Send</button>
+    </div>
+
+</section>
+
+<section class="list-members">
+    <div class="member">
+        <p class="name">Список участников чата</p>
+
+    </div>
+    <div class="member">
+        <div class="photo"
+             style="background-image: url(http://127.0.0.1:8000/uploads/ava/004.jpg);">
+            <div class="online"></div>
+        </div>
+        <div class="member-contact">
+            <p class="name">Olga Name</p>
+        </div>
+        <div class="timer">3 min</div>
+    </div>
+
+</section>
+
+{% endblock content %}

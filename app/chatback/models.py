@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 
 
 class Member(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='user')
     avatar = models.ImageField(default='ava/avadefault.png', upload_to='ava/', verbose_name='Avatar', blank=True)
     online = models.BooleanField(default=False, verbose_name='Online/offline')
 
