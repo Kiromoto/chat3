@@ -66,7 +66,8 @@ ROOT_URLCONF = 'app.urls'
 
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/chat/members/'
+LOGIN_REDIRECT_URL = '/chat/profile/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 LOGINURL = 'http://127.0.0.1:8000/accounts/login/'
 
@@ -132,7 +133,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'statics_root/'
+STATIC_ROOT = 'statics_root/'
 
 MEDIA_ROOT = 'uploads/'
 MEDIA_URL = '/uploads/'
@@ -152,6 +153,10 @@ FILE_UPLOAD_HANDLERS = [
 ]
 
 REST_FRAMEWORK = {
+    # 'DEFAULT_RENDERED_CLASSES': [
+    #     'rest_framework.renderers.JSONRenderer',
+    #     'rest_framework.renderers.BrowsableAPIRenderer',
+    # ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10,

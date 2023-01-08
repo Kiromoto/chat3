@@ -1,0 +1,15 @@
+{% extends 'flatpages/index.html' %}
+
+{% block title %}
+Редактировать профиль
+{% endblock title %}
+
+{% block content %}
+<h2>{{ user.get_full_name }}</h2>
+<form method="POST" enctype="multipart/form-data">>
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+{% endblock content %}

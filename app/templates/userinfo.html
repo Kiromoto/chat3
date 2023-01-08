@@ -5,9 +5,31 @@
 {% endblock title %}
 
 {% block content %}
-<form class="form-control" action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Изменить"/>
-</form>
+<div class="div-user-info">
+див 1
+</div>
+<div class="div-user-info">
+див 2
+</div>
+<div class="div-user-info">
+див 3
+</div>
+
+
+
+<h2>{{ user.get_full_name }}</h2>
+<p>Ваше имя: {{ user.first_name }}</p>
+<p>Ваша фамилия: {{ user.last_name }}</p>
+
+{% if user.member.avatar %}
+<div class="content-block">
+<p>Ваше фото: <img src="{{ user.member.avatar.url }}" width="200px"  alt="ваша аватарка"/></li></p>
+</div>
+{% else %}
+<p>Ваше фото: вы еще не загрузили свое фото!</p>
+{% endif %}
+<p>Вы сейчас на сайте: {{ user.member.online }}</p>
+<a class="send-button" href="{% url 'update_profile' user.pk %}">Редактировать профиль</a>
+
+
 {% endblock content %}
