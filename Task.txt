@@ -16,3 +16,4 @@ https://webdevblog.ru/sozdanie-django-api-ispolzuya-django-rest-framework-apivie
 https://www.bootdey.com/snippets/view/User-profile-with-friends-and-chat#css
 https://developer.mozilla.org/ru/docs/Learn/Server-side/Django/Models
 https://docs.djangoproject.com/en/4.1/ref/models/fields/#field-types
+Статья про расширение стандартной модели User: https://tproger.ru/translations/extending-django-user-model/
