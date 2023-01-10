@@ -453,10 +453,9 @@ nav ul li a:hover {
 .page-link {
     position: relative;
     display: block;
-    color: #000205;
+    color: #2066d3;
     text-decoration: none;
-    background-color: #0aa146;
-    border: 1px solid #000205;
+    border: 1px solid #7994bd;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 

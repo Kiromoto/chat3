@@ -35,6 +35,13 @@ class AllMembersList(ListView):
     context_object_name = 'allmemberslist'
     paginate_by = 20
 
+    def get_context_date(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['numbers'] = 20
+        print(context)
+        return context
+
+
 def show_profile(request, *args, **kwargs):
     return render(request, 'userinfo.html')
 
